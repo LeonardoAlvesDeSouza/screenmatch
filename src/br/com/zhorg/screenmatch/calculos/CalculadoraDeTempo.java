@@ -1,4 +1,6 @@
-package br.com.zhorg.screenmatch.modelos;
+package br.com.zhorg.screenmatch.calculos;
+
+import br.com.zhorg.screenmatch.modelos.Titulo;
 
 public class CalculadoraDeTempo {
     private int tempoTotal;

@@ -1,6 +1,8 @@
 package br.com.zhorg.screenmatch.modelos;
 
-public class Serie extends Titulo{
+import br.com.zhorg.screenmatch.calculos.Classificavel;
+
+public class Serie extends Titulo implements Classificavel {
     private int temporadas;
     private boolean ativo;
     private int episodiosPorTemporada;
@@ -46,5 +48,10 @@ public class Serie extends Titulo{
     @Override
     public int getDuracaoEmMinutos() {
         return this.temporadas * this.episodiosPorTemporada * this.minutosPorEpisodios;
+    }
+
+    @Override
+    public int getClassificacao() {
+        return (int) mediaAvaliacoes() / 2;
     }
 }

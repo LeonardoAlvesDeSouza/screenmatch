@@ -1,4 +1,6 @@
-import br.com.zhorg.screenmatch.modelos.CalculadoraDeTempo;
+import br.com.zhorg.screenmatch.calculos.CalculadoraDeTempo;
+import br.com.zhorg.screenmatch.calculos.FiltroRecomendacao;
+import br.com.zhorg.screenmatch.modelos.Episodio;
 import br.com.zhorg.screenmatch.modelos.Filme;
 import br.com.zhorg.screenmatch.modelos.Serie;
 
@@ -45,5 +47,15 @@ public class Principal {
         calc.inclui(outroFilme);
         calc.inclui(minhaSerie);
         System.out.println("Tempo gasto para assistir tudo: " + calc.getTempoTotal() + " minutos.");
+
+        FiltroRecomendacao filtro = new FiltroRecomendacao();
+        filtro.filtra(meuFilme);
+
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setSerie(minhaSerie);
+        episodio.setTotalVisualizacoes(300);
+        filtro.filtra(episodio);
+
     }
 }
